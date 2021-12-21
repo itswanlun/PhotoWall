@@ -9,21 +9,39 @@
 /* Begin PBXBuildFile section */
 		0E1287E6276C73A9009ECE09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1287E5276C73A9009ECE09 /* AppDelegate.swift */; };
 		0E1287E8276C73A9009ECE09 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1287E7276C73A9009ECE09 /* SceneDelegate.swift */; };
-		0E1287EA276C73A9009ECE09 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1287E9276C73A9009ECE09 /* ViewController.swift */; };
-		0E1287ED276C73A9009ECE09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E1287EB276C73A9009ECE09 /* Main.storyboard */; };
+		0E1287EA276C73A9009ECE09 /* PhotoGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1287E9276C73A9009ECE09 /* PhotoGridViewController.swift */; };
 		0E1287EF276C73AA009ECE09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E1287EE276C73AA009ECE09 /* Assets.xcassets */; };
 		0E1287F2276C73AA009ECE09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E1287F0276C73AA009ECE09 /* LaunchScreen.storyboard */; };
+		0E1287FA276C8565009ECE09 /* PhotoGridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1287F9276C8565009ECE09 /* PhotoGridCollectionViewCell.swift */; };
+		0E1287FC276EF252009ECE09 /* APIDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1287FB276EF252009ECE09 /* APIDemoViewController.swift */; };
+		0E1287FE276EF4C0009ECE09 /* PhotoResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1287FD276EF4C0009ECE09 /* PhotoResult.swift */; };
+		0E128800276F001D009ECE09 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1287FF276F001D009ECE09 /* ApiKey.swift */; };
+		0E12880927708D8B009ECE09 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E12880827708D8B009ECE09 /* PhotoDetailViewController.swift */; };
+		0E7BFB82277178A9002AA62D /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BFB81277178A9002AA62D /* APIService.swift */; };
+		0E7BFB8427718EF7002AA62D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BFB8327718EF7002AA62D /* NetworkError.swift */; };
+		0E7BFB8727719218002AA62D /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BFB8627719218002AA62D /* UIImageView+Ext.swift */; };
+		B2F039231752140319220A94 /* Pods_PhotoWall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACE7AB23AC2CA7C437890D3C /* Pods_PhotoWall.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0E1287E2276C73A9009ECE09 /* PhotoWall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoWall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E1287E5276C73A9009ECE09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E1287E7276C73A9009ECE09 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0E1287E9276C73A9009ECE09 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0E1287EC276C73A9009ECE09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0E1287E9276C73A9009ECE09 /* PhotoGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewController.swift; sourceTree = "<group>"; };
 		0E1287EE276C73AA009ECE09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E1287F1276C73AA009ECE09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E1287F3276C73AA009ECE09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E1287F9276C8565009ECE09 /* PhotoGridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridCollectionViewCell.swift; sourceTree = "<group>"; };
+		0E1287FB276EF252009ECE09 /* APIDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDemoViewController.swift; sourceTree = "<group>"; };
+		0E1287FD276EF4C0009ECE09 /* PhotoResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResult.swift; sourceTree = "<group>"; };
+		0E1287FF276F001D009ECE09 /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
+		0E12880827708D8B009ECE09 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		0E7BFB81277178A9002AA62D /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		0E7BFB8327718EF7002AA62D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		0E7BFB8627719218002AA62D /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
+		2FA2ADB7E99A68A6CEDA9B1F /* Pods-PhotoWall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoWall.release.xcconfig"; path = "Target Support Files/Pods-PhotoWall/Pods-PhotoWall.release.xcconfig"; sourceTree = "<group>"; };
+		ACE7AB23AC2CA7C437890D3C /* Pods_PhotoWall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoWall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F147F83A66360D5593B2B144 /* Pods-PhotoWall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoWall.debug.xcconfig"; path = "Target Support Files/Pods-PhotoWall/Pods-PhotoWall.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2F039231752140319220A94 /* Pods_PhotoWall.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +61,8 @@
 			children = (
 				0E1287E4276C73A9009ECE09 /* PhotoWall */,
 				0E1287E3276C73A9009ECE09 /* Products */,
+				6F577B352CBA94765111374F /* Pods */,
+				E56E0EFAEFF2A1AB15604E84 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +77,103 @@
 		0E1287E4276C73A9009ECE09 /* PhotoWall */ = {
 			isa = PBXGroup;
 			children = (
-				0E1287E5276C73A9009ECE09 /* AppDelegate.swift */,
-				0E1287E7276C73A9009ECE09 /* SceneDelegate.swift */,
-				0E1287E9276C73A9009ECE09 /* ViewController.swift */,
-				0E1287EB276C73A9009ECE09 /* Main.storyboard */,
-				0E1287EE276C73AA009ECE09 /* Assets.xcassets */,
-				0E1287F0276C73AA009ECE09 /* LaunchScreen.storyboard */,
-				0E1287F3276C73AA009ECE09 /* Info.plist */,
+				0E12880A2770AF0F009ECE09 /* Features */,
+				0E12880727707373009ECE09 /* Demo */,
+				0E12880627707306009ECE09 /* Resources */,
+				0E1288052770729A009ECE09 /* Infrastructure */,
+				0E1287FF276F001D009ECE09 /* ApiKey.swift */,
 			);
 			path = PhotoWall;
+			sourceTree = "<group>";
+		};
+		0E12880227707234009ECE09 /* PhotoGrid */ = {
+			isa = PBXGroup;
+			children = (
+				0E1287E9276C73A9009ECE09 /* PhotoGridViewController.swift */,
+				0E1287F9276C8565009ECE09 /* PhotoGridCollectionViewCell.swift */,
+			);
+			path = PhotoGrid;
+			sourceTree = "<group>";
+		};
+		0E1288052770729A009ECE09 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				0E7BFB85277191EC002AA62D /* Extension */,
+				0E12880B2770AF3D009ECE09 /* Networking */,
+				0E1287E5276C73A9009ECE09 /* AppDelegate.swift */,
+				0E1287E7276C73A9009ECE09 /* SceneDelegate.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		0E12880627707306009ECE09 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0E1287F0276C73AA009ECE09 /* LaunchScreen.storyboard */,
+				0E1287F3276C73AA009ECE09 /* Info.plist */,
+				0E1287EE276C73AA009ECE09 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0E12880727707373009ECE09 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				0E1287FB276EF252009ECE09 /* APIDemoViewController.swift */,
+				0E1287FD276EF4C0009ECE09 /* PhotoResult.swift */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		0E12880A2770AF0F009ECE09 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				0E12880C2770B003009ECE09 /* PhotoDetail */,
+				0E12880227707234009ECE09 /* PhotoGrid */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		0E12880B2770AF3D009ECE09 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				0E7BFB81277178A9002AA62D /* APIService.swift */,
+				0E7BFB8327718EF7002AA62D /* NetworkError.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		0E12880C2770B003009ECE09 /* PhotoDetail */ = {
+			isa = PBXGroup;
+			children = (
+				0E12880827708D8B009ECE09 /* PhotoDetailViewController.swift */,
+			);
+			path = PhotoDetail;
+			sourceTree = "<group>";
+		};
+		0E7BFB85277191EC002AA62D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0E7BFB8627719218002AA62D /* UIImageView+Ext.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		6F577B352CBA94765111374F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F147F83A66360D5593B2B144 /* Pods-PhotoWall.debug.xcconfig */,
+				2FA2ADB7E99A68A6CEDA9B1F /* Pods-PhotoWall.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E56E0EFAEFF2A1AB15604E84 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ACE7AB23AC2CA7C437890D3C /* Pods_PhotoWall.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +183,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E1287F6276C73AA009ECE09 /* Build configuration list for PBXNativeTarget "PhotoWall" */;
 			buildPhases = (
+				F010DB96BA5BD6F1DA7BBA7C /* [CP] Check Pods Manifest.lock */,
 				0E1287DE276C73A9009ECE09 /* Sources */,
 				0E1287DF276C73A9009ECE09 /* Frameworks */,
 				0E1287E0276C73A9009ECE09 /* Resources */,
+				3639D647813413C6D7B0C917 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,34 +238,75 @@
 			files = (
 				0E1287F2276C73AA009ECE09 /* LaunchScreen.storyboard in Resources */,
 				0E1287EF276C73AA009ECE09 /* Assets.xcassets in Resources */,
-				0E1287ED276C73A9009ECE09 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3639D647813413C6D7B0C917 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhotoWall/Pods-PhotoWall-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhotoWall/Pods-PhotoWall-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PhotoWall/Pods-PhotoWall-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F010DB96BA5BD6F1DA7BBA7C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PhotoWall-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0E1287DE276C73A9009ECE09 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E1287EA276C73A9009ECE09 /* ViewController.swift in Sources */,
+				0E7BFB8727719218002AA62D /* UIImageView+Ext.swift in Sources */,
+				0E1287EA276C73A9009ECE09 /* PhotoGridViewController.swift in Sources */,
+				0E1287FE276EF4C0009ECE09 /* PhotoResult.swift in Sources */,
+				0E1287FC276EF252009ECE09 /* APIDemoViewController.swift in Sources */,
+				0E1287FA276C8565009ECE09 /* PhotoGridCollectionViewCell.swift in Sources */,
+				0E128800276F001D009ECE09 /* ApiKey.swift in Sources */,
 				0E1287E6276C73A9009ECE09 /* AppDelegate.swift in Sources */,
 				0E1287E8276C73A9009ECE09 /* SceneDelegate.swift in Sources */,
+				0E7BFB82277178A9002AA62D /* APIService.swift in Sources */,
+				0E12880927708D8B009ECE09 /* PhotoDetailViewController.swift in Sources */,
+				0E7BFB8427718EF7002AA62D /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0E1287EB276C73A9009ECE09 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0E1287EC276C73A9009ECE09 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0E1287F0276C73AA009ECE09 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -284,6 +436,7 @@
 		};
 		0E1287F7276C73AA009ECE09 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F147F83A66360D5593B2B144 /* Pods-PhotoWall.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -291,10 +444,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B92JLVTB27;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PhotoWall/Info.plist;
+				INFOPLIST_FILE = PhotoWall/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -312,6 +464,7 @@
 		};
 		0E1287F8276C73AA009ECE09 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FA2ADB7E99A68A6CEDA9B1F /* Pods-PhotoWall.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -319,10 +472,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B92JLVTB27;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PhotoWall/Info.plist;
+				INFOPLIST_FILE = PhotoWall/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
