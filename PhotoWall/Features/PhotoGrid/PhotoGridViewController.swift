@@ -34,7 +34,7 @@ class PhotoGridViewController: UIViewController {
     lazy var searchBar: UISearchBar = {
         let search = UISearchBar()
         search.searchBarStyle = UISearchBar.Style.default
-        search.placeholder = "Plase Enter Keyword"
+        search.placeholder = "Please enter keyword"
         search.delegate = self
         //search.backgroundColor = .gray
         
