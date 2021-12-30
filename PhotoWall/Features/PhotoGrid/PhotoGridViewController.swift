@@ -1,16 +1,35 @@
-//
-//  ViewController.swift
-//  PhotoWall
-//
-//  Created by Wan-lun Zheng on 2021/12/17.
-//
-
 import UIKit
 import SnapKit
 
 class PhotoGridViewController: UIViewController {
+    let footerHeight: CGFloat = 40
+    let perPageCount = 30
+    var page: Int = 1
+    var previousKeyword = ""
+    
+    var isLoadingMore: Bool = false {
+        didSet {
+            if isLoadingMore {
+                indicatorView.startAnimating()
+            } else {
+                indicatorView.stopAnimating()
+            }
+        }
+    }
+    
     var data: [PhotoItem] = []
     var isSearch: Bool = false
+    
+    lazy var indicatorView: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView()
+        return indicator
+    }()
+    
+    lazy var refreshControl: UIRefreshControl = {
+        let control = UIRefreshControl()
+        control.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        return control
+    }()
     
     lazy var searchBar: UISearchBar = {
         let search = UISearchBar()
@@ -28,7 +47,10 @@ class PhotoGridViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(PhotoGridCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: PhotoGridCollectionViewCell.self))
-        
+        collectionView.refreshControl = refreshControl
+        collectionView.register(UICollectionReusableView.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+                                withReuseIdentifier: String(describing: UICollectionReusableView.self))
         return collectionView
     }()
     
@@ -42,7 +64,7 @@ class PhotoGridViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        searchBar.showsCancelButton = true
         setupUI()
         loadData()
     }
@@ -62,14 +84,25 @@ extension PhotoGridViewController {
         }
     }
     
-    private func loadData(keyword: String? = nil) {
+    private func loadData(keyword: String? = nil, isRefresh: Bool = false) {
+        isLoadingMore = true
         if let keyword = keyword {
-            APIService.shared.getSearchPhoto(page: 1, perPage: 5, keyword: keyword, completionHandler: { [weak self] result in
+            APIService.shared.getSearchPhoto(page: page, perPage: perPageCount, keyword: keyword, completionHandler: { [weak self] result in
                 guard let self = self else { return }
+                
+                self.isLoadingMore = false
+                self.refreshControl.endRefreshing()
+                
                 switch result {
                 case .success(let photos):
+                    if isRefresh || self.previousKeyword == "" || self.previousKeyword != keyword {
+                        self.data = photos
+                    } else {
+                        self.data.append(contentsOf: photos)
+                    }
                     
-                    self.data = photos
+                    self.previousKeyword = keyword
+                    
                     self.collectionView.reloadData()
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -77,11 +110,20 @@ extension PhotoGridViewController {
                 }
             })
         } else {
-            APIService.shared.getRandomPhoto(page: 1, perPage: 5, completionHandler: { [weak self] result in
+            APIService.shared.getRandomPhoto(page: page, perPage: perPageCount, completionHandler: { [weak self] result in
                 guard let self = self else { return }
+                
+                self.isLoadingMore = false
+                self.refreshControl.endRefreshing()
+                
                 switch result {
                 case .success(let photos):
-                    self.data = photos
+                    if isRefresh {
+                        self.data = photos
+                    } else {
+                        self.data.append(contentsOf: photos)
+                    }
+                    
                     self.collectionView.reloadData()
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -92,11 +134,26 @@ extension PhotoGridViewController {
 
     }
     
-    //    @objc func handleShoeSearchBar() {
-    //        print("Show search Bar")
-    //    }
+    @objc func refresh() {
+        page = 0
+        if previousKeyword == "" {
+            loadData(isRefresh: true)
+        } else {
+            loadData(keyword: previousKeyword)
+        }
+    }
     
-    
+    func loadNextPageIfNeeded(row: Int) {
+        let triggerRow = data.count - 3
+        if (row > triggerRow) && !isLoadingMore {
+            page += 1
+            if previousKeyword == "" {
+                loadData()
+            } else {
+                loadData(keyword: previousKeyword)
+            }
+        }
+    }
 }
 
 // MARK: - Delegate
@@ -114,9 +171,6 @@ extension PhotoGridViewController: UICollectionViewDelegate, UICollectionViewDat
         if let url = URL(string: item.urls.small) {
             cell.photoImageView.setImage(url: url)
         }
-        //cell.photoImageView.image = UIImage(named: "isabela-kronemberger-fXrpmxzyi2g-unsplash")
-        
-        //cell.backgroundColor = .blue
         
         return cell
     }
@@ -124,7 +178,7 @@ extension PhotoGridViewController: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         guard let flowayout = collectionViewLayout as? UICollectionViewFlowLayout else { return .zero }
         
-        let columns: CGFloat = 4
+        let columns: CGFloat = 3
         let space: CGFloat = flowayout.sectionInset.left + flowayout.sectionInset.right + (flowayout.minimumInteritemSpacing * (columns - 1))
         let width: CGFloat = (collectionView.frame.size.width - space) / columns
         let height: CGFloat = width
@@ -133,16 +187,30 @@ extension PhotoGridViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //        let vc = DetailViewController()
-        //        let nc = UINavigationController(rootViewController: vc)
-        //
-        //        present(nc, animated: true, completion: nil)
-        
         let vc = PhotoDetailViewController()
         self.navigationController?.pushViewController(vc, animated: true)
         if let url = URL(string: data[indexPath.row].urls.small) {
             vc.url = url
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let footer = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter,
+                                                                     withReuseIdentifier: String(describing: UICollectionReusableView.self),
+                                                                     for: indexPath)
+        
+        footer.addSubview(indicatorView)
+        indicatorView.frame = CGRect(x: 0, y: 0, width: collectionView.frame.width, height: footerHeight)
+        
+        return footer
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        loadNextPageIfNeeded(row: indexPath.row)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.size.width, height: footerHeight)
     }
 }
 
@@ -159,6 +227,8 @@ extension PhotoGridViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         isSearch = false
+        previousKeyword = ""
+        loadData(isRefresh: true)
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

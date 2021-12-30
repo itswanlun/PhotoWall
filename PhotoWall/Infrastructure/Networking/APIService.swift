@@ -31,35 +31,19 @@ class APIService {
                                          perPage: perPage,
                                          query: "dog")
         
-                AF.request("https://api.unsplash.com/photos",
-                           method: .get,
-                           parameters: parameters)
-                    .responseDecodable(of: [PhotoItem].self) { response in
-                        switch response.result {
-                        case .success(let photoResult):
-                            if !photoResult.isEmpty {
-                                completionHandler(Result.success(photoResult))
-                            }
-                        case .failure(let error):
-                            print("❌", error)
-                        }
+        AF.request("https://api.unsplash.com/photos",
+                   method: .get,
+                   parameters: parameters)
+            .responseDecodable(of: [PhotoItem].self) { response in
+                switch response.result {
+                case .success(let photoResult):
+                    if !photoResult.isEmpty {
+                        completionHandler(Result.success(photoResult))
                     }
-        
-//        AF.request("https://api.unsplash.com/search/photos",
-//                   method: .get,
-//                   parameters: parameters)
-//          .responseDecodable(of: PhotoResult.self) { response in
-//                switch response.result {
-//                case .success(let photoResult):
-//                    if !photoResult.results.isEmpty {
-//                        //self.dataSource = photoResult.results
-//                        completionHandler(Result.success(photoResult.results))
-//                    }
-//                case .failure(let error):
-//                    print("❌", error)
-//                    completionHandler(Result.failure(NetworkError.unknownError))
-//                }
-//            }
+                case .failure(let error):
+                    print("❌", error)
+                }
+            }
     }
     
     func getSearchPhoto(page: Int, perPage: Int, keyword: String, completionHandler: @escaping (Result<[PhotoItem], NetworkError>) -> Void) {
@@ -71,7 +55,7 @@ class APIService {
         AF.request("https://api.unsplash.com/search/photos",
                    method: .get,
                    parameters: parameters)
-          .responseDecodable(of: PhotoResult.self) { response in
+            .responseDecodable(of: PhotoResult.self) { response in
                 switch response.result {
                 case .success(let photoResult):
                     if !photoResult.results.isEmpty {
