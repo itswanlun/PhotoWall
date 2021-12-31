@@ -18,7 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         self.window = window
         
-        let viewController = PhotoGridViewController(apiService: FakeAPIService.shared)
+        let viewModel = PhotoGridViewModel(apiService: FakeAPIService.shared)
+        let viewController = PhotoGridViewController(viewModel: viewModel)
         let navigationController = UINavigationController(rootViewController: viewController)
         
         window.rootViewController = navigationController

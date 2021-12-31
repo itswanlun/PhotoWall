@@ -21,6 +21,7 @@
 		0E361B00277DF1D9005A9CF7 /* APIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E361AFF277DF1D9005A9CF7 /* APIServiceProtocol.swift */; };
 		0E7BFB82277178A9002AA62D /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BFB81277178A9002AA62D /* APIService.swift */; };
 		0E7BFB8427718EF7002AA62D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BFB8327718EF7002AA62D /* NetworkError.swift */; };
+		0EE758C4277F319600E56903 /* PhotoGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE758C3277F319600E56903 /* PhotoGridViewModel.swift */; };
 		0EEFC556277DD90600FC2117 /* PhotoResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEFC555277DD90600FC2117 /* PhotoResult.swift */; };
 		0EEFC55B277DE9FF00FC2117 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEFC55A277DE9FF00FC2117 /* ModelData.swift */; };
 		B2F039231752140319220A94 /* Pods_PhotoWall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACE7AB23AC2CA7C437890D3C /* Pods_PhotoWall.framework */; };
@@ -43,6 +44,7 @@
 		0E361AFF277DF1D9005A9CF7 /* APIServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceProtocol.swift; sourceTree = "<group>"; };
 		0E7BFB81277178A9002AA62D /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		0E7BFB8327718EF7002AA62D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		0EE758C3277F319600E56903 /* PhotoGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewModel.swift; sourceTree = "<group>"; };
 		0EEFC555277DD90600FC2117 /* PhotoResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoResult.swift; sourceTree = "<group>"; };
 		0EEFC55A277DE9FF00FC2117 /* ModelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		2FA2ADB7E99A68A6CEDA9B1F /* Pods-PhotoWall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoWall.release.xcconfig"; path = "Target Support Files/Pods-PhotoWall/Pods-PhotoWall.release.xcconfig"; sourceTree = "<group>"; };
@@ -94,8 +96,8 @@
 		0E12880227707234009ECE09 /* PhotoGrid */ = {
 			isa = PBXGroup;
 			children = (
+				0EE758C5277F31BF00E56903 /* PhotoGrid */,
 				0EEFC554277DD8F400FC2117 /* Model */,
-				0E1287E9276C73A9009ECE09 /* PhotoGridViewController.swift */,
 				0E1287F9276C8565009ECE09 /* PhotoGridCollectionViewCell.swift */,
 			);
 			path = PhotoGrid;
@@ -150,6 +152,15 @@
 				0E12880827708D8B009ECE09 /* PhotoDetailViewController.swift */,
 			);
 			path = PhotoDetail;
+			sourceTree = "<group>";
+		};
+		0EE758C5277F31BF00E56903 /* PhotoGrid */ = {
+			isa = PBXGroup;
+			children = (
+				0EE758C3277F319600E56903 /* PhotoGridViewModel.swift */,
+				0E1287E9276C73A9009ECE09 /* PhotoGridViewController.swift */,
+			);
+			path = PhotoGrid;
 			sourceTree = "<group>";
 		};
 		0EEFC554277DD8F400FC2117 /* Model */ = {
@@ -306,6 +317,7 @@
 				0E1287EA276C73A9009ECE09 /* PhotoGridViewController.swift in Sources */,
 				0E1287FA276C8565009ECE09 /* PhotoGridCollectionViewCell.swift in Sources */,
 				0EEFC55B277DE9FF00FC2117 /* ModelData.swift in Sources */,
+				0EE758C4277F319600E56903 /* PhotoGridViewModel.swift in Sources */,
 				0E128800276F001D009ECE09 /* ApiKey.swift in Sources */,
 				0E361AFE277DF1C6005A9CF7 /* FakeAPIService.swift in Sources */,
 				0E1287E6276C73A9009ECE09 /* AppDelegate.swift in Sources */,
