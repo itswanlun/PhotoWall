@@ -21,16 +21,16 @@ struct PhotoParameters: Encodable {
     }
 }
 
-class APIService {
+class APIService: APIServiceProtocol {
     static let shared = APIService()
     private init() { }
-    
+
     func getRandomPhoto(page: Int, perPage: Int, completionHandler: @escaping (Result<[PhotoItem], NetworkError>) -> Void) {
         let parameters = PhotoParameters(page: page,
                                          clientID: apiKey.accessKey,
                                          perPage: perPage,
                                          query: "dog")
-        
+
         AF.request("https://api.unsplash.com/photos",
                    method: .get,
                    parameters: parameters)
@@ -45,13 +45,13 @@ class APIService {
                 }
             }
     }
-    
+
     func getSearchPhoto(page: Int, perPage: Int, keyword: String, completionHandler: @escaping (Result<[PhotoItem], NetworkError>) -> Void) {
         let parameters = PhotoParameters(page: page,
                                          clientID: apiKey.accessKey,
                                          perPage: perPage,
                                          query: keyword)
-        
+
         AF.request("https://api.unsplash.com/search/photos",
                    method: .get,
                    parameters: parameters)

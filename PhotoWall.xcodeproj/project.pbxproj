@@ -15,10 +15,14 @@
 		0E1287FA276C8565009ECE09 /* PhotoGridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1287F9276C8565009ECE09 /* PhotoGridCollectionViewCell.swift */; };
 		0E128800276F001D009ECE09 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1287FF276F001D009ECE09 /* ApiKey.swift */; };
 		0E12880927708D8B009ECE09 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E12880827708D8B009ECE09 /* PhotoDetailViewController.swift */; };
+		0E361AF9277DEB39005A9CF7 /* RandomPhotosDataSource.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E361AF8277DEB39005A9CF7 /* RandomPhotosDataSource.json */; };
+		0E361AFC277DEF43005A9CF7 /* DogPhotosDataSource.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E361AFB277DEF43005A9CF7 /* DogPhotosDataSource.json */; };
+		0E361AFE277DF1C6005A9CF7 /* FakeAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E361AFD277DF1C6005A9CF7 /* FakeAPIService.swift */; };
+		0E361B00277DF1D9005A9CF7 /* APIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E361AFF277DF1D9005A9CF7 /* APIServiceProtocol.swift */; };
 		0E7BFB82277178A9002AA62D /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BFB81277178A9002AA62D /* APIService.swift */; };
 		0E7BFB8427718EF7002AA62D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BFB8327718EF7002AA62D /* NetworkError.swift */; };
-		0E7BFB8727719218002AA62D /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BFB8627719218002AA62D /* UIImageView+Ext.swift */; };
 		0EEFC556277DD90600FC2117 /* PhotoResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEFC555277DD90600FC2117 /* PhotoResult.swift */; };
+		0EEFC55B277DE9FF00FC2117 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEFC55A277DE9FF00FC2117 /* ModelData.swift */; };
 		B2F039231752140319220A94 /* Pods_PhotoWall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACE7AB23AC2CA7C437890D3C /* Pods_PhotoWall.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,10 +37,14 @@
 		0E1287F9276C8565009ECE09 /* PhotoGridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridCollectionViewCell.swift; sourceTree = "<group>"; };
 		0E1287FF276F001D009ECE09 /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		0E12880827708D8B009ECE09 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		0E361AF8277DEB39005A9CF7 /* RandomPhotosDataSource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RandomPhotosDataSource.json; sourceTree = "<group>"; };
+		0E361AFB277DEF43005A9CF7 /* DogPhotosDataSource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DogPhotosDataSource.json; sourceTree = "<group>"; };
+		0E361AFD277DF1C6005A9CF7 /* FakeAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeAPIService.swift; sourceTree = "<group>"; };
+		0E361AFF277DF1D9005A9CF7 /* APIServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceProtocol.swift; sourceTree = "<group>"; };
 		0E7BFB81277178A9002AA62D /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		0E7BFB8327718EF7002AA62D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		0E7BFB8627719218002AA62D /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
 		0EEFC555277DD90600FC2117 /* PhotoResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoResult.swift; sourceTree = "<group>"; };
+		0EEFC55A277DE9FF00FC2117 /* ModelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		2FA2ADB7E99A68A6CEDA9B1F /* Pods-PhotoWall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoWall.release.xcconfig"; path = "Target Support Files/Pods-PhotoWall/Pods-PhotoWall.release.xcconfig"; sourceTree = "<group>"; };
 		ACE7AB23AC2CA7C437890D3C /* Pods_PhotoWall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoWall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F147F83A66360D5593B2B144 /* Pods-PhotoWall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoWall.debug.xcconfig"; path = "Target Support Files/Pods-PhotoWall/Pods-PhotoWall.debug.xcconfig"; sourceTree = "<group>"; };
@@ -76,8 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				0E12880A2770AF0F009ECE09 /* Features */,
-				0E12880627707306009ECE09 /* Resources */,
 				0E1288052770729A009ECE09 /* Infrastructure */,
+				0E12880627707306009ECE09 /* Resources */,
 				0E1287FF276F001D009ECE09 /* ApiKey.swift */,
 			);
 			path = PhotoWall;
@@ -96,7 +104,7 @@
 		0E1288052770729A009ECE09 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				0E7BFB85277191EC002AA62D /* Extension */,
+				0EEFC557277DDC3600FC2117 /* DataSource */,
 				0E12880B2770AF3D009ECE09 /* Networking */,
 				0E1287E5276C73A9009ECE09 /* AppDelegate.swift */,
 				0E1287E7276C73A9009ECE09 /* SceneDelegate.swift */,
@@ -107,6 +115,8 @@
 		0E12880627707306009ECE09 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0E361AFB277DEF43005A9CF7 /* DogPhotosDataSource.json */,
+				0E361AF8277DEB39005A9CF7 /* RandomPhotosDataSource.json */,
 				0E1287F0276C73AA009ECE09 /* LaunchScreen.storyboard */,
 				0E1287F3276C73AA009ECE09 /* Info.plist */,
 				0E1287EE276C73AA009ECE09 /* Assets.xcassets */,
@@ -128,6 +138,8 @@
 			children = (
 				0E7BFB81277178A9002AA62D /* APIService.swift */,
 				0E7BFB8327718EF7002AA62D /* NetworkError.swift */,
+				0E361AFD277DF1C6005A9CF7 /* FakeAPIService.swift */,
+				0E361AFF277DF1D9005A9CF7 /* APIServiceProtocol.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -140,20 +152,20 @@
 			path = PhotoDetail;
 			sourceTree = "<group>";
 		};
-		0E7BFB85277191EC002AA62D /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				0E7BFB8627719218002AA62D /* UIImageView+Ext.swift */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
 		0EEFC554277DD8F400FC2117 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				0EEFC555277DD90600FC2117 /* PhotoResult.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0EEFC557277DDC3600FC2117 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				0EEFC55A277DE9FF00FC2117 /* ModelData.swift */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 		6F577B352CBA94765111374F /* Pods */ = {
@@ -235,6 +247,8 @@
 			files = (
 				0E1287F2276C73AA009ECE09 /* LaunchScreen.storyboard in Resources */,
 				0E1287EF276C73AA009ECE09 /* Assets.xcassets in Resources */,
+				0E361AFC277DEF43005A9CF7 /* DogPhotosDataSource.json in Resources */,
+				0E361AF9277DEB39005A9CF7 /* RandomPhotosDataSource.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,11 +301,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E7BFB8727719218002AA62D /* UIImageView+Ext.swift in Sources */,
+				0E361B00277DF1D9005A9CF7 /* APIServiceProtocol.swift in Sources */,
 				0EEFC556277DD90600FC2117 /* PhotoResult.swift in Sources */,
 				0E1287EA276C73A9009ECE09 /* PhotoGridViewController.swift in Sources */,
 				0E1287FA276C8565009ECE09 /* PhotoGridCollectionViewCell.swift in Sources */,
+				0EEFC55B277DE9FF00FC2117 /* ModelData.swift in Sources */,
 				0E128800276F001D009ECE09 /* ApiKey.swift in Sources */,
+				0E361AFE277DF1C6005A9CF7 /* FakeAPIService.swift in Sources */,
 				0E1287E6276C73A9009ECE09 /* AppDelegate.swift in Sources */,
 				0E1287E8276C73A9009ECE09 /* SceneDelegate.swift in Sources */,
 				0E7BFB82277178A9002AA62D /* APIService.swift in Sources */,
@@ -445,6 +461,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -473,6 +490,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

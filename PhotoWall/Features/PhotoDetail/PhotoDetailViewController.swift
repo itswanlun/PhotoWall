@@ -1,5 +1,6 @@
 import UIKit
 import SnapKit
+import Kingfisher
 
 class PhotoDetailViewController: UIViewController {
     
@@ -29,7 +30,7 @@ extension PhotoDetailViewController {
         }
         
         if let url = url {
-            photoImageView.setImage(url: url)
+            photoImageView.kf.setImage(with: url)
         }
         
     }

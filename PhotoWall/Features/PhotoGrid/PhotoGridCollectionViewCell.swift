@@ -3,8 +3,10 @@ import SnapKit
 
 class PhotoGridCollectionViewCell: UICollectionViewCell {
     lazy var photoImageView: UIImageView = {
-        translatesAutoresizingMaskIntoConstraints = false
         let photoImageView = UIImageView()
+        photoImageView.translatesAutoresizingMaskIntoConstraints = false
+        photoImageView.contentMode = .scaleAspectFill
+        photoImageView.clipsToBounds = true
         return photoImageView
     }()
     
