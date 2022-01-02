@@ -40,8 +40,8 @@ class APIService: APIServiceProtocol {
                     if !photoResult.isEmpty {
                         completionHandler(Result.success(photoResult))
                     }
-                case .failure(let error):
-                    print("❌", error)
+                case .failure:
+                    completionHandler(Result.failure(NetworkError.unknownError))
                 }
             }
     }
@@ -62,8 +62,7 @@ class APIService: APIServiceProtocol {
                         //self.dataSource = photoResult.results
                         completionHandler(Result.success(photoResult.results))
                     }
-                case .failure(let error):
-                    print("❌", error)
+                case .failure:
                     completionHandler(Result.failure(NetworkError.unknownError))
                 }
             }

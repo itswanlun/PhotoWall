@@ -4,14 +4,9 @@ class PhotoGridViewModel {
     let apiService: APIServiceProtocol
     let perPageCount = 30
     
-    var page: Int = 1
-    var previousKeyword = ""
-    var isSearch: Bool = false
-    var data: [PhotoItem] = [] {
-        didSet {
-            dataChangedClosure?(data)
-        }
-    }
+    private(set) var page: Int = 1
+    var keyword: String?
+    var data: [PhotoItem] = []
     var isLoadingMore: Bool = false {
         didSet {
             isLoadingClosure?(isLoadingMore)
@@ -23,10 +18,17 @@ class PhotoGridViewModel {
         }
     }
     
+    var message: (title: String?, description: String?) = (nil, nil) {
+        didSet {
+            showMessageClosure?(message.title, message.description)
+        }
+    }
+    
     // MARK: - Closures
-    var dataChangedClosure: (([PhotoItem]) -> Void)?
+    var dataChangedClosure: (([PhotoItem], Bool) -> Void)?
     var isLoadingClosure: ((Bool) -> Void)?
     var isNoResultClosure: ((Bool) -> Void)?
+    var showMessageClosure: ((String?, String?) -> Void)?
     
     // MARK: - Initialization
     init(apiService: APIServiceProtocol = APIService.shared) {
@@ -43,18 +45,20 @@ class PhotoGridViewModel {
                 
                 switch result {
                 case .success(let photos):
-                    if isRefresh || self.previousKeyword == "" || self.previousKeyword != keyword {
-                        self.data = photos
-                    } else if photos.isEmpty {
+                    guard !photos.isEmpty else {
                         self.isNoResult = true
+                        return
+                    }
+                    
+                    if isRefresh {
+                        self.data = photos
                     } else {
                         self.data.append(contentsOf: photos)
                     }
                     
-                    self.previousKeyword = keyword
-                case .failure(let error):
-                    print(error.localizedDescription)
-                    break
+                    self.dataChangedClosure?(self.data, isRefresh)
+                case .failure:
+                    self.message = (title: "Error", description: "Something went wrong!")
                 }
             })
         } else {
@@ -65,39 +69,41 @@ class PhotoGridViewModel {
                 
                 switch result {
                 case .success(let photos):
+                    guard !photos.isEmpty else {
+                        self.isNoResult = true
+                        return
+                    }
+                    
                     if isRefresh {
                         self.data = photos
-                    } else if photos.isEmpty {
-                        self.isNoResult = true
                     } else {
                         self.data.append(contentsOf: photos)
                     }
-                case .failure(let error):
-                    print(error.localizedDescription)
-                    break
+                    
+                    self.dataChangedClosure?(self.data, isRefresh)
+                case .failure:
+                    self.message = (title: "Error", description: "Something went wrong!")
                 }
             })
         }
     }
     
+    func reset() {
+        isNoResult = false
+        page = 1
+        keyword = nil
+    }
+    
     func refresh() {
         page = 1
-        if previousKeyword == "" {
-            loadData(isRefresh: true)
-        } else {
-            loadData(keyword: previousKeyword)
-        }
+        loadData(keyword: keyword, isRefresh: true)
     }
     
     func loadNextPageIfNeeded(row: Int) {
         let triggerRow = data.count - 3
         if (row > triggerRow) && !isLoadingMore && !isNoResult {
             page += 1
-            if previousKeyword == "" {
-                loadData()
-            } else {
-                loadData(keyword: previousKeyword)
-            }
+            loadData(keyword: keyword)
         }
     }
 }

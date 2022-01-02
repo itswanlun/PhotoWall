@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  PhotoWall
-//
-//  Created by Wan-lun Zheng on 2021/12/17.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -18,7 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         self.window = window
         
-        let viewModel = PhotoGridViewModel(apiService: FakeAPIService.shared)
+        let viewModel = PhotoGridViewModel()
         let viewController = PhotoGridViewController(viewModel: viewModel)
         let navigationController = UINavigationController(rootViewController: viewController)
         

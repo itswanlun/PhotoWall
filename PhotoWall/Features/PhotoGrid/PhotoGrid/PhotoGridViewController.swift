@@ -76,8 +76,11 @@ class PhotoGridViewController: UIViewController {
     }
     
     func bindViewModel() {
-        viewModel.dataChangedClosure = { [weak self] _ in
+        viewModel.dataChangedClosure = { [weak self] _, isRefresh in
             self?.collectionView.reloadData()
+            if isRefresh {
+                self?.scrollToTop()
+            }
         }
         
         viewModel.isLoadingClosure = { [weak self] isLoading in
@@ -94,6 +97,12 @@ class PhotoGridViewController: UIViewController {
                 self?.noResultLabel.isHidden = false
             } else {
                 self?.noResultLabel.isHidden = true
+            }
+        }
+        
+        viewModel.showMessageClosure = { [weak self] title, description in
+            if let title = title, let description = description {
+                self?.showMessage(title: title, message: description)
             }
         }
     }
@@ -178,40 +187,32 @@ extension PhotoGridViewController: UICollectionViewDelegate, UICollectionViewDat
 }
 
 extension PhotoGridViewController: UISearchBarDelegate {
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        viewModel.isSearch = true
-    }
-    
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        viewModel.isSearch = false
-    }
-    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         searchBar.text = ""
-        viewModel.isSearch = false
-        viewModel.isNoResult = false
-        viewModel.previousKeyword = ""
-        viewModel.page = 1
-        collectionView.scrollToItem(at: IndexPath(row: 0, section: 0),
-                                    at: .top,
-                                    animated: true)
+        
+        viewModel.reset()
         viewModel.loadData(isRefresh: true)
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        viewModel.isSearch = false
-        viewModel.isNoResult = false
-        viewModel.page = 1
-        collectionView.scrollToItem(at: IndexPath(row: 0, section: 0),
-                                    at: .top,
-                                    animated: true)
+        
+        viewModel.reset()
+        viewModel.keyword = searchBar.text
         viewModel.loadData(keyword: searchBar.text, isRefresh: true)
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
+        let trimmed = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+        if trimmed.isEmpty {
+            searchBar.text = ""
+        }
+    }
+    
+    private func scrollToTop() {
+        collectionView.scrollToItem(at: IndexPath(row: 0, section: 0),
+                                    at: .top,
+                                    animated: false)
     }
 }

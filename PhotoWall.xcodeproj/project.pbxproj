@@ -22,6 +22,7 @@
 		0E7BFB82277178A9002AA62D /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BFB81277178A9002AA62D /* APIService.swift */; };
 		0E7BFB8427718EF7002AA62D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BFB8327718EF7002AA62D /* NetworkError.swift */; };
 		0EE758C4277F319600E56903 /* PhotoGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE758C3277F319600E56903 /* PhotoGridViewModel.swift */; };
+		0EE758C8277F47EF00E56903 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE758C7277F47EF00E56903 /* UIViewController+Ext.swift */; };
 		0EEFC556277DD90600FC2117 /* PhotoResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEFC555277DD90600FC2117 /* PhotoResult.swift */; };
 		0EEFC55B277DE9FF00FC2117 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEFC55A277DE9FF00FC2117 /* ModelData.swift */; };
 		B2F039231752140319220A94 /* Pods_PhotoWall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACE7AB23AC2CA7C437890D3C /* Pods_PhotoWall.framework */; };
@@ -45,6 +46,7 @@
 		0E7BFB81277178A9002AA62D /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		0E7BFB8327718EF7002AA62D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		0EE758C3277F319600E56903 /* PhotoGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewModel.swift; sourceTree = "<group>"; };
+		0EE758C7277F47EF00E56903 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		0EEFC555277DD90600FC2117 /* PhotoResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoResult.swift; sourceTree = "<group>"; };
 		0EEFC55A277DE9FF00FC2117 /* ModelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		2FA2ADB7E99A68A6CEDA9B1F /* Pods-PhotoWall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoWall.release.xcconfig"; path = "Target Support Files/Pods-PhotoWall/Pods-PhotoWall.release.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		0E1288052770729A009ECE09 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				0EE758C6277F47BB00E56903 /* Extension */,
 				0EEFC557277DDC3600FC2117 /* DataSource */,
 				0E12880B2770AF3D009ECE09 /* Networking */,
 				0E1287E5276C73A9009ECE09 /* AppDelegate.swift */,
@@ -161,6 +164,14 @@
 				0E1287E9276C73A9009ECE09 /* PhotoGridViewController.swift */,
 			);
 			path = PhotoGrid;
+			sourceTree = "<group>";
+		};
+		0EE758C6277F47BB00E56903 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0EE758C7277F47EF00E56903 /* UIViewController+Ext.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		0EEFC554277DD8F400FC2117 /* Model */ = {
@@ -314,6 +325,7 @@
 			files = (
 				0E361B00277DF1D9005A9CF7 /* APIServiceProtocol.swift in Sources */,
 				0EEFC556277DD90600FC2117 /* PhotoResult.swift in Sources */,
+				0EE758C8277F47EF00E56903 /* UIViewController+Ext.swift in Sources */,
 				0E1287EA276C73A9009ECE09 /* PhotoGridViewController.swift in Sources */,
 				0E1287FA276C8565009ECE09 /* PhotoGridCollectionViewCell.swift in Sources */,
 				0EEFC55B277DE9FF00FC2117 /* ModelData.swift in Sources */,
@@ -471,6 +483,7 @@
 				INFOPLIST_FILE = PhotoWall/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
@@ -483,7 +496,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -500,6 +513,7 @@
 				INFOPLIST_FILE = PhotoWall/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
@@ -512,7 +526,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
