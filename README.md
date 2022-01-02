@@ -15,9 +15,24 @@
 在這個作品裡我想練習的部分有以下：
 1. UIKit programmatically
 2. 資料來源：[https://unsplash.com/developers](https://unsplash.com/developers)
-3. 使用 MVVM 架構
-4. 使用 CocoaPods 管理 third-party
-5. 使用 third-party
+4. 使用 MVVM 架構
+5. 使用 CocoaPods 管理 third-party
+6. 使用 third-party
     * [SnapKit](https://github.com/SnapKit/SnapKit)(auto layout)   
     * [Kingfisher](https://github.com/onevcat/Kingfisher)(cache image)
     * [Alamofire](https://github.com/Alamofire/Alamofire)(network layer)
+
+## 如何使用
+
+方法一、申請unsplash Developers 取得API accessKey & secretKey 
+https://unsplash.com/developers
+```swift
+let apiKey = UnsplashApiKey(accessKey: "Access Key", secretKey: "secret Key")
+
+```
+
+方法二、使用FakeAPIService
+至SceneDelegate.swift
+```swift
+let viewModel = PhotoGridViewModel(apiService: FakeAPIService.shared)
+```
